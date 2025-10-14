@@ -1,7 +1,10 @@
 <template>
   <div v-if="hasError" class="flex-1 flex flex-col">
     <slot v-if="$slots.fallback" name="fallback" />
-    <main v-else class="flex-1 grid place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <main
+      v-else
+      class="flex-1 grid place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
+    >
       <div class="text-center">
         <div
           class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100 mb-6"
@@ -28,7 +31,9 @@
         >
           Something went wrong
         </h1>
-        <p class="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
+        <p
+          class="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
+        >
           An unexpected error occurred. Please try reloading the page.
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
@@ -54,43 +59,49 @@
 </template>
 
 <script setup lang="ts">
-import { type ComponentPublicInstance, onErrorCaptured, ref } from 'vue'
+import { type ComponentPublicInstance, onErrorCaptured, ref } from 'vue';
 
 interface Props {
-  fallback?: boolean
-  showDetails?: boolean
+  fallback?: boolean;
+  showDetails?: boolean;
 }
 
-const _props = defineProps<Props>()
+const _props = defineProps<Props>();
 
-const hasError = ref<boolean>(false)
-const error = ref<Error | null>(null)
-const errorInfo = ref<string | null>(null)
+const hasError = ref<boolean>(false);
+const error = ref<Error | null>(null);
+const errorInfo = ref<string | null>(null);
 
 const handleReload = (): void => {
-  window.location.reload()
-}
+  window.location.reload();
+};
 
-onErrorCaptured((err: unknown, instance: ComponentPublicInstance | null, info: string): boolean => {
-  console.error('Error Boundary caught an error:', err)
-  console.error('Error Info:', info)
-  if (_props.showDetails) {
-    console.log('Erroring instance:', instance)
-  }
+onErrorCaptured(
+  (
+    err: unknown,
+    instance: ComponentPublicInstance | null,
+    info: string,
+  ): boolean => {
+    console.error('Error Boundary caught an error:', err);
+    console.error('Error Info:', info);
+    if (_props.showDetails) {
+      console.log('Erroring instance:', instance);
+    }
 
-  hasError.value = true
-  errorInfo.value = info
+    hasError.value = true;
+    errorInfo.value = info;
 
-  if (err instanceof Error) {
-    error.value = err
-  } else {
-    error.value = new Error(String(err))
-  }
+    if (err instanceof Error) {
+      error.value = err;
+    } else {
+      error.value = new Error(String(err));
+    }
 
-  return false
-})
+    return false;
+  },
+);
 
 defineOptions({
   name: 'ErrorBoundary',
-})
+});
 </script>

@@ -1,6 +1,5 @@
- 
 module.exports = {
-  ignoreDependencies: [
-    //
+  ignore: [
+    "env.d.ts"
   ],
 };

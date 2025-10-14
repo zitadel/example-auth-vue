@@ -6,4 +6,4 @@ export const ZITADEL_SCOPES = [
   'urn:zitadel:iam:user:metadata',
   'urn:zitadel:iam:user:resourceowner',
   'urn:zitadel:iam:org:projects:roles',
-].join(' ')
+].join(' ');

@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue';
 
-const seconds = ref(5)
-let timer: number | undefined
+const seconds = ref(5);
+let timer: number | undefined;
 
 onMounted(() => {
   timer = window.setInterval(() => {
-    seconds.value -= 1
+    seconds.value -= 1;
     if (seconds.value <= 0) {
-      clearInterval(timer)
-      window.location.replace('/') // go home
+      clearInterval(timer);
+      window.location.replace('/'); // go home
     }
-  }, 1000)
-})
+  }, 1000);
+});
 
 onBeforeUnmount(() => {
-  if (timer) clearInterval(timer)
-})
+  if (timer) clearInterval(timer);
+});
 </script>
 
 <template>

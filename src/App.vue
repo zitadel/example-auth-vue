@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AuthProvider from 'vue-oidc-context'
-import { ZITADEL_SCOPES } from '@/config/scopes'
-import ErrorBoundary from '@components/ErrorBoundary.vue'
+import AuthProvider from 'vue-oidc-context';
+import { ZITADEL_SCOPES } from '@/config/scopes';
+import ErrorBoundary from '@components/ErrorBoundary.vue';
 
 const cfg = {
   authority: import.meta.env.VITE_ZITADEL_DOMAIN,
@@ -11,11 +11,15 @@ const cfg = {
   scope: ZITADEL_SCOPES,
   loadUserInfo: true,
   onSigninCallback: () => {
-    console.log('onSigninCallback fired')
-    window.history.replaceState({}, document.title, window.location.origin + '/')
-    window.location.assign(import.meta.env.VITE_POST_LOGIN_URL || '/profile')
+    console.log('onSigninCallback fired');
+    window.history.replaceState(
+      {},
+      document.title,
+      window.location.origin + '/',
+    );
+    window.location.assign(import.meta.env.VITE_POST_LOGIN_URL || '/profile');
   },
-}
+};
 </script>
 
 <template>
