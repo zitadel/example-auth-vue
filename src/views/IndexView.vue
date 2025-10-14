@@ -5,13 +5,10 @@
       <div class="max-w-6xl w-full">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h1 class="text-4xl font-bold text-gray-900 mb-6">
-              PKCE Authentication Demo
-            </h1>
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">PKCE Authentication Demo</h1>
             <p class="text-xl text-gray-600 mb-8">
-              This application demonstrates an PKCE authentication flow with
-              Zitadel. Perfect for learning OAuth 2.0 security patterns and
-              integrating with your own application.
+              This application demonstrates an PKCE authentication flow with Zitadel. Perfect for
+              learning OAuth 2.0 security patterns and integrating with your own application.
             </p>
 
             <div class="space-y-6">
@@ -20,11 +17,7 @@
                   class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
-                  <svg
-                    class="w-5 h-5 text-blue-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -33,12 +26,10 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
-                    Secure by Design
-                  </h3>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">Secure by Design</h3>
                   <p class="text-gray-600">
-                    PKCE prevents authorization code interception attacks
-                    without requiring client secrets.
+                    PKCE prevents authorization code interception attacks without requiring client
+                    secrets.
                   </p>
                 </div>
               </div>
@@ -48,11 +39,7 @@
                   class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
-                  <svg
-                    class="w-5 h-5 text-green-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -61,12 +48,9 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
-                    Standards Compliant
-                  </h3>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">Standards Compliant</h3>
                   <p class="text-gray-600">
-                    Built on OAuth 2.0 and OpenID Connect specifications for
-                    maximum compatibility.
+                    Built on OAuth 2.0 and OpenID Connect specifications for maximum compatibility.
                   </p>
                 </div>
               </div>
@@ -76,11 +60,7 @@
                   class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center"
                 >
                   <!--suppress HtmlDeprecatedAttribute -->
-                  <svg
-                    class="w-5 h-5 text-purple-600"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z"
@@ -89,12 +69,9 @@
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-lg font-semibold text-gray-900 mb-1">
-                    Developer Friendly
-                  </h3>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-1">Developer Friendly</h3>
                   <p class="text-gray-600">
-                    Quick to integrate with comprehensive documentation and
-                    examples.
+                    Quick to integrate with comprehensive documentation and examples.
                   </p>
                 </div>
               </div>
@@ -141,9 +118,7 @@
                 </button>
 
                 <div class="text-center">
-                  <p class="text-sm text-gray-500 mb-4">
-                    What happens when you click the button:
-                  </p>
+                  <p class="text-sm text-gray-500 mb-4">What happens when you click the button:</p>
                   <div class="text-left space-y-2">
                     <div class="flex items-center text-xs text-gray-600">
                       <span

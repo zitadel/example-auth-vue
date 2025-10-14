@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const port = Number(env.PORT) || 5173
+  const port = Number(env.PORT) || 3000
 
   return {
     plugins: [vue(), vueDevTools(), tailwindcss()],

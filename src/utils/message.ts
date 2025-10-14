@@ -3,12 +3,7 @@ import type { LocationQueryValue } from 'vue-router'
 type ErrorCategory = 'signin-error' | 'auth-error'
 
 export function getMessage(
-  errorInput:
-    | string
-    | null
-    | LocationQueryValue
-    | LocationQueryValue[]
-    | undefined,
+  errorInput: string | null | LocationQueryValue | LocationQueryValue[] | undefined,
   category: ErrorCategory,
 ): { heading: string; message: string } {
   const errorCode = Array.isArray(errorInput)
@@ -32,8 +27,7 @@ export function getMessage(
         return {
           heading: 'Account Not Linked',
           message:
-            'To confirm your identity, sign in with the same account you used ' +
-            'originally.',
+            'To confirm your identity, sign in with the same account you used ' + 'originally.',
         }
       case 'emailsignin':
         return {
@@ -43,8 +37,7 @@ export function getMessage(
       case 'credentialssignin':
         return {
           heading: 'Sign-in Failed',
-          message:
-            'Sign in failed. Check the details you provided are correct.',
+          message: 'Sign in failed. Check the details you provided are correct.',
         }
       case 'sessionrequired':
         return {
@@ -54,8 +47,7 @@ export function getMessage(
       default:
         return {
           heading: 'Unable to Sign in',
-          message:
-            'An unexpected error occurred during sign-in. Please try again.',
+          message: 'An unexpected error occurred during sign-in. Please try again.',
         }
     }
   } else if (category === 'auth-error') {
@@ -82,9 +74,7 @@ export function getMessage(
       default:
         return {
           heading: 'Authentication Error',
-          message:
-            'An unexpected error occurred during authentication. Please try ' +
-            'again.',
+          message: 'An unexpected error occurred during authentication. Please try ' + 'again.',
         }
     }
   }

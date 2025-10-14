@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AuthProvider from 'vue-oidc-context'
 import { ZITADEL_SCOPES } from '@/config/scopes'
+import ErrorBoundary from '@components/ErrorBoundary.vue'
 
 const cfg = {
   authority: import.meta.env.VITE_ZITADEL_DOMAIN,
@@ -18,27 +19,17 @@ const cfg = {
 </script>
 
 <template>
-  <AuthProvider
-    :authority="cfg.authority"
-    :client_id="cfg.client_id"
-    :redirect_uri="cfg.redirect_uri"
-    :post_logout_redirect_uri="cfg.post_logout_redirect_uri"
-    :scope="cfg.scope"
-    :loadUserInfo="cfg.loadUserInfo"
-    :onSigninCallback="cfg.onSigninCallback"
-  >
-    <router-view />
-  </AuthProvider>
+  <ErrorBoundary>
+    <AuthProvider
+      :authority="cfg.authority"
+      :client_id="cfg.client_id"
+      :redirect_uri="cfg.redirect_uri"
+      :post_logout_redirect_uri="cfg.post_logout_redirect_uri"
+      :scope="cfg.scope"
+      :loadUserInfo="cfg.loadUserInfo"
+      :onSigninCallback="cfg.onSigninCallback"
+    >
+      <router-view />
+    </AuthProvider>
+  </ErrorBoundary>
 </template>
-
-<style>
-html, body, #app {
-  height: 100%;
-  margin: 0;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-}
-</style>
