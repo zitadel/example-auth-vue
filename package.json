@@ -14,7 +14,7 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-	"prepack": "vue-tsc --noEmit"
+	"prepack": "vue-tsc -p tsconfig.app.json --noEmit"
   },
   "dependencies": {
     "oidc-client-ts": "^3.3.0",
