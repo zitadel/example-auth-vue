@@ -32,7 +32,7 @@ You'll need a ZITADEL account and application configured. Follow the [ZITADEL do
 > **Important:** Configure the following URLs in your ZITADEL application settings:
 >
 > - **Redirect URIs:** Add `http://localhost:3000/auth/callback` (for development)
-> - **Post Logout Redirect URIs:** Add `http://localhost:3000/` (for development)
+- **Post Logout Redirect URIs:** Add `http://localhost:3000` (for development)
 >
 > These URLs must exactly match what your Vue.js application uses. For production, add your production URLs.
 
