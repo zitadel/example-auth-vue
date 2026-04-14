@@ -74,9 +74,9 @@ Follow these steps to get the application running:
 
 ```bash
 # 1. Clone the repository
-git clone git@github.com:zitadel/example-auth-vuejs.git
+git clone git@github.com:zitadel/example-auth-vue.git
 
-cd example-auth-vuejs
+cd example-auth-vue
 
 # 2. Install the project dependencies
 npm install
