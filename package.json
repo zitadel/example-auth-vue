@@ -15,7 +15,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint .",
-    "format": "prettier --write src/",
+    "format": "prettier --write .",
     "prepack": "vue-tsc -p tsconfig.app.json --noEmit",
     "test": "playwright test"
   },
