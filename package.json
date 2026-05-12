@@ -8,16 +8,18 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint .",
+    "dev": "vite",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepack": "vue-tsc -p tsconfig.app.json --noEmit",
-    "test": "playwright test"
+    "preview": "vite preview",
+    "start": "vite",
+    "test": "playwright test",
+    "type-check": "vue-tsc --build"
   },
   "dependencies": {
     "oidc-client-ts": "^3.3.0",
