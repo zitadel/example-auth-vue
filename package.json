@@ -8,21 +8,23 @@
     "node": ">=22.0.0"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint .",
+    "dev": "vite",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepack": "vue-tsc -p tsconfig.app.json --noEmit",
-    "test": "playwright test"
+    "preview": "vite preview",
+    "start": "vite",
+    "test": "playwright test",
+    "type-check": "vue-tsc --build"
   },
   "dependencies": {
     "oidc-client-ts": "^3.3.0",
     "vue": "^3.5.18",
-    "vue-oidc-context": "^0.1.1",
+    "@zitadel/vue-auth": "^0.0.1",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
@@ -37,15 +39,15 @@
     "@vue/eslint-config-typescript": "^14.6.0",
     "@vue/tsconfig": "^0.7.0",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.31.0",
+    "eslint": "^9.39.1",
     "eslint-plugin-vue": "~10.3.0",
     "jiti": "^2.4.2",
     "knip": "^5.64.1",
     "npm-run-all2": "^8.0.4",
     "postcss": "^8.5.6",
-    "prettier": "3.6.2",
+    "prettier": "^3.6.2",
     "tailwindcss": "^4.1.12",
-    "typescript": "~5.8.0",
+    "typescript": "~5.9.2",
     "vite": "^7.3.2",
     "vite-plugin-vue-devtools": "^8.0.0",
     "vue-tsc": "^3.0.4"
