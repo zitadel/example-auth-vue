@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { useAuth } from 'vue-oidc-context';
+import { useAuth } from '@zitadel/vue-auth';
 
 const auth = useAuth();
 

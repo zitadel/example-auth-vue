@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AuthProvider from 'vue-oidc-context';
+import AuthProvider from '@zitadel/vue-auth';
 import { ZITADEL_SCOPES } from '@/config/scopes';
 import ErrorBoundary from '@components/ErrorBoundary.vue';
 

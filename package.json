@@ -24,7 +24,7 @@
   "dependencies": {
     "oidc-client-ts": "^3.3.0",
     "vue": "^3.5.18",
-    "vue-oidc-context": "^0.1.1",
+    "@zitadel/vue-auth": "^0.0.1",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { withAuthenticationRequired } from 'vue-oidc-context';
+import { withAuthenticationRequired } from '@zitadel/vue-auth';
 import IndexView from '@/views/IndexView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import CallbackView from '@/views/CallbackView.vue';
