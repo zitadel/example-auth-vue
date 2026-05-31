@@ -1,25 +1,53 @@
-import { globalIgnores } from 'eslint/config';
-import {
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from '@vue/eslint-config-typescript';
+import js from '@eslint/js';
+import ts from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
-import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
+import vueParser from 'vue-eslint-parser';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
 
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
-
-export default defineConfigWithVueTs(
+export default ts.config(
   {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      'dist-ssr/**',
+      'build/**',
+      'coverage/**',
+    ],
   },
-
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
-
-  pluginVue.configs['flat/essential'],
-  vueTsConfigs.recommended,
-  skipFormatting,
+  js.configs.recommended,
+  ...ts.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: ts.parser,
+      parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+      globals: { ...globals.browser, ...globals.node, ...globals.es2021 },
+    },
+  },
+  {
+    files: ['**/*.{js,mjs}'],
+    languageOptions: {
+      globals: { ...globals.node, ...globals.es2021 },
+    },
+  },
+  {
+    files: ['**/*.{test,spec}.{ts,tsx,js,mjs}', 'test/**/*.{ts,tsx,js,mjs}'],
+    languageOptions: { globals: { ...globals.jest, ...globals.node } },
+  },
+  ...pluginVue.configs['flat/essential'],
+  {
+    files: ['**/*.vue'],
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: ts.parser,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        extraFileExtensions: ['.vue'],
+      },
+      globals: { ...globals.browser, ...globals.node, ...globals.es2021 },
+    },
+  },
+  prettier,
 );
